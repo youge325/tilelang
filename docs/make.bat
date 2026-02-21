@@ -24,8 +24,26 @@ if errorlevel 9009 (
 )
 
 if "%1" == "" goto help
+if "%1" == "html-en" goto html-en
+if "%1" == "html-zh" goto html-zh
+if "%1" == "html-all" goto html-all
 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+goto end
+
+:html-en
+%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR%\en %SPHINXOPTS% %O%
+goto end
+
+:html-zh
+%SPHINXBUILD% -M html %SOURCEDIR%\zh_CN %BUILDDIR%\zh_CN %SPHINXOPTS% %O%
+goto end
+
+:html-all
+%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR%\en %SPHINXOPTS% %O%
+%SPHINXBUILD% -M html %SOURCEDIR%\zh_CN %BUILDDIR%\zh_CN %SPHINXOPTS% %O%
+echo ^<!DOCTYPE html^>^<html^>^<head^>^<meta http-equiv="refresh" content="0;url=en/html/index.html"^>^</head^>^<body^>^<p^>^<a href="en/html/index.html"^>English^</a^> ^| ^<a href="zh_CN/html/index.html"^>中文^</a^>^</p^>^</body^>^</html^> > %BUILDDIR%\index.html
+echo Build complete for EN and ZH_CN.
 goto end
 
 :help

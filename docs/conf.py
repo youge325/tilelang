@@ -46,7 +46,7 @@ redirects = {"get_started/try_out": "../index.html#getting-started"}
 
 language = "en"
 
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "README.md", "**/*libinfo*", "**/*version*"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "README.md", "**/*libinfo*", "**/*version*", "zh_CN"]
 
 pygments_style = "sphinx"
 todo_include_todos = False
@@ -54,13 +54,18 @@ todo_include_todos = False
 # -- Options for HTML output ----------------------------------------------
 
 html_theme = "furo"
-templates_path = []
+templates_path = ["_templates"]
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
+html_js_files = ["lang_switcher.js"]
 footer_copyright = "© 2025-2026 TileLang"
 footer_note = " "
 
-html_theme_options = {"light_logo": "img/logo-v2.png", "dark_logo": "img/logo-v2.png"}
+html_theme_options = {
+    "light_logo": "img/logo-v2.png",
+    "dark_logo": "img/logo-v2.png",
+    "announcement": '<div id="lang-switcher">\U0001f310 <strong>English</strong> | <a data-lang="zh_CN" href="#">\u4e2d\u6587</a></div>',
+}
 
 header_links = [
     ("Home", "https://github.com/tile-ai/tilelang"),
@@ -76,4 +81,5 @@ html_context = {
     "github_repo": "tilelang",
     "github_version": "main/docs/",
     "theme_vcs_pageview_mode": "edit",
+    "current_language": "en",
 }

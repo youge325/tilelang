@@ -8,3 +8,17 @@
 .sidebar-logo-container {
   line-height: 0;
 }
+
+/* Language switcher in the announcement bar */
+#lang-switcher {
+  display: inline-block;
+  font-size: 0.9em;
+}
+#lang-switcher a {
+  color: inherit;
+  text-decoration: underline;
+  margin: 0 2px;
+}
+#lang-switcher strong {
+  margin: 0 2px;
+}
