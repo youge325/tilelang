@@ -12,7 +12,7 @@
 2. 程序经过多个 *Pass* 进行转换和优化（*lower* 阶段，参见 `tilelang/engine/lower.py`），最终产生中间表示（例如 CPU 的 LLVM 或 C，NVIDIA GPU 的 CUDA 等）。
 3. 生成的代码由相应的编译器（例如 nvcc）编译为硬件可执行文件。
 
-```{figure} ../_static/img/overview.png
+```{figure} ../../_static/img/overview.png
 :width: 300
 :alt: 编译过程概览
 :align: center
@@ -51,7 +51,7 @@ func = matmul(1024, 1024, 1024, 128, 128, 32)
 
 TileLang 本质上执行*渐进式降级*。例如，一个 `T.copy` 可能首先被展开为 `T.Parallel`（参见 pass `LowerTileOP`），然后再次展开，最终得到可以转换为 CUDA C 代码的更低级语句。
 
-```{figure} ../_static/img/ir_transform_diagram.png
+```{figure} ../../_static/img/ir_transform_diagram.png
 :width: 400
 :alt: IR 转换图
 :align: center

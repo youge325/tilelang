@@ -15,7 +15,7 @@ DeepSeek 的 MLA（Multi-Head Latent Attention，多头潜在注意力）是一�
 
 我们在批量大小（batch size）为 64 和 128、数据类型为 float16 的条件下，对 FlashMLA、TileLang、Torch、Triton 和 FlashInfer 的性能进行了基准测试，结果如下图所示。
 
-```{figure} ../_static/img/mla_hopper/bs64_float16.png
+```{figure} ../../_static/img/mla_hopper/bs64_float16.png
 :width: 50%
 :alt: Overview
 :align: center
@@ -23,7 +23,7 @@ DeepSeek 的 MLA（Multi-Head Latent Attention，多头潜在注意力）是一�
 Figure 1: Performance under batch size=64
 ```
 
-```{figure} ../_static/img/mla_hopper/bs128_float16.png
+```{figure} ../../_static/img/mla_hopper/bs128_float16.png
 :width: 50%
 :alt: Overview
 :align: center
@@ -71,7 +71,7 @@ for i in range(loop_range):
 
 图 3 和图 4 展示了 MLA 的前端 TileLang 脚本及其对应的执行计划。其中，`T.gemm` 表示矩阵乘法操作，`transpose_B=True` 表示对矩阵 B 进行转置，`policy=FullCol` 指定每个 warpgroup 计算一列（即沿垂直维度拆分结果矩阵）。`T.copy` 表示缓冲区之间的拷贝操作。
 
-```{figure} ../_static/img/mla_hopper/qk_layout.jpg
+```{figure} ../../_static/img/mla_hopper/qk_layout.jpg
 :width: 50%
 :alt: Overview
 :align: center
@@ -79,7 +79,7 @@ for i in range(loop_range):
 Figure 3: Buffer shapes in Q @ K
 ```
 
-```{figure} ../_static/img/mla_hopper/pv_layout.jpg
+```{figure} ../../_static/img/mla_hopper/pv_layout.jpg
 :width: 50%
 :alt: Overview
 :align: center
@@ -175,8 +175,8 @@ Hopper 与 MI300X 架构之间的主要实现差异包括：
 我们使用 float16 精度、批量大小为 64 和 128 的配置，在多个框架之间进行了对比性能分析。实验结果如下：
 
 <figure style="text-align: center">
-  <a href="../figures/flashmla-amd.png">
-    <img src="../figures/flashmla-amd.png" alt="AMD FlashMLA Performance Comparison">
+  <a href="../../_static/img/flashmla-amd.png">
+    <img src="../../_static/img/flashmla-amd.png" alt="AMD FlashMLA Performance Comparison">
    </a>
   <figcaption style="text-align: center;">Figure 1: Computational throughput comparison across frameworks (Batch sizes 64 and 128)</figcaption>
 </figure>

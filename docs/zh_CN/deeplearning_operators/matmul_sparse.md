@@ -26,7 +26,7 @@
    本教程主要侧重于 CUDA，因为 ROCm 尚不支持此功能。但是，AMD 在 MI300X 等 GPU 的矩阵核心中提供了类似的能力。
 :::
 
-```{figure} ../_static/img/sparse_mma_storage_example.png
+```{figure} ../../_static/img/sparse_mma_storage_example.png
 :align: center
 
 图：稀疏 MMA 存储示例（来自 PTX 文档）

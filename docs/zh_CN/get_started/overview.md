@@ -4,7 +4,7 @@
 
 下图展示了 **TileLang** 程序如何从高级描述逐步降级到硬件特定的可执行文件。我们提供了三种不同的编程接口——分别针对**初学者**、**开发者**和**专家**级用户——每种接口位于降级流水线的不同层级。**Tile Language** 还允许在同一个内核中混合使用这些接口，使用户能够在最适合其需求的抽象级别上工作。
 
-```{figure} ../_static/img/overview.png
+```{figure} ../../_static/img/overview.png
 :width: 50%
 :alt: 概览
 :align: center
@@ -60,7 +60,7 @@
 总体而言，[图 2](#fig-overview-gemm) (b) 展示了 ``TileLang`` 的类 Python 语法
 如何让开发者在用户友好的编程模型中推理性能关键的优化。
 
-```{figure} ../_static/img/MatmulExample.png
+```{figure} ../../_static/img/MatmulExample.png
 :align: center
 :width: 100%
 :alt: GPU 上使用多级 Tiling 的 GEMM
@@ -83,7 +83,7 @@
 
 全局内存和硬件特定内存之间的数据传输可以使用 `T.copy` 来管理。此外，硬件特定的缓冲区可以使用 `T.clear` 或 `T.fill` 来初始化。对于数据赋值操作，也可以使用 `T.Parallel` 并行执行，如后续章节中布局推断 Pass 的演示所示。
 
-```{figure} ../_static/img/LayoutInference.png
+```{figure} ../../_static/img/LayoutInference.png
    :align: center
    :width: 100%
    :alt: GPU 上使用多级 Tiling 的 GEMM

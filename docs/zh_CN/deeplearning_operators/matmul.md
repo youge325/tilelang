@@ -20,7 +20,7 @@ TileLang 是一种专门为编写高性能 GPU 内核设计的领域特定语言
 
 - **第三层级：** 用户完全控制线程级原语，可以编写几乎与手写 CUDA/HIP 内核一样显式的代码。这对于需要管理每一个细节（如 PTX 内联汇编、显式线程行为等）的性能专家非常有用。
 
-```{figure} ../_static/img/overview.png
+```{figure} ../../_static/img/overview.png
 :width: 50%
 :alt: TileLang 编译流程概览
 :align: center
@@ -42,7 +42,7 @@ TileLang 的第一层级对一般用户来说非常友好——因为它不需�
 
 ## 矩阵乘法示例
 
-```{figure} ../_static/img/MatmulExample.png
+```{figure} ../../_static/img/MatmulExample.png
 :alt: 矩阵乘法示例
 :align: center
 
@@ -147,7 +147,7 @@ with T.Kernel(T.ceildiv(N, block_N), T.ceildiv(M, block_M), threads=128) as (bx,
 - 根据 N/block_N 和 M/block_M 设置块网格维度。
 - `threads=128` 指定每个线程块使用 128 个线程。编译器会推断循环如何映射到这些线程。
 
-```{figure} ../_static/img/Parallel.png
+```{figure} ../../_static/img/Parallel.png
 :alt: 并行示意图
 :align: center
 
@@ -174,7 +174,7 @@ for ko in T.Pipelined(T.ceildiv(K, block_K), num_stages=3):
 - `T.Pipelined` 自动安排异步复制和计算指令，使内存操作与算术运算重叠执行。
 - 参数 `num_stages=3` 表示流水线深度。
 
-```{figure} ../_static/img/software_pipeline_inference.png
+```{figure} ../../_static/img/software_pipeline_inference.png
 :alt: 软件流水线推断
 :align: center
 
@@ -217,7 +217,7 @@ TileLang 的第二层级在概念上类似于 Triton——用户可以控制分�
 
 ## 不同平台上的性能
 
-```{figure} ../_static/img/op_benchmark_consistent_gemm_fp16.png
+```{figure} ../../_static/img/op_benchmark_consistent_gemm_fp16.png
 :alt: 不同平台上的性能
 :align: center
 
